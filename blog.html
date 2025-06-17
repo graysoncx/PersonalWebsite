@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Grayson Garrett</title>
+<!--================
+    Google Fonts
+==================-->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<!--======================
+    External Stylesheet
+=========================-->   
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--===============
+  Navigation Bar
+================-->    
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-brand">Grayson Garrett</a>
+<!--================
+    Desktop Menu
+=================-->            
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="blog.html">Blog</a>
+                <div class="dropdown">
+                    <button class="dropdown-button">About <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+                    <div class="dropdown-menu">
+                        <a href="bio.html" class="dropdown-item">Biography</a>
+                        <a href="mission.html" class="dropdown-item">Mission</a>
+                        <a href="projects.html" class="dropdown-item">Projects</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-button">Products and Services<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+                    <div class="dropdown-menu">
+                        <a href="services.html" class="dropdown-item">Services</a>
+                        <a href="store.html" class="dropdown-item">Store</a>
+                        <a href="delivery.html" class="dropdown-item">Delivery</a>
+                    </div>
+                </div>
+                <a href="#">Portfolio</a>
+                <a href="contact.html">Contact</a>
+            </div>
+<!--=======================
+    Mobile Menu Button
+========================-->                        
+            <button id="mobile-menu-button">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+<!--====================
+       Mobile Menu
+=====================-->      
+        <div id="mobile-menu" class="container">
+            <a href="index.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="#">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>    
+<!--=================
+    Main Content
+==================-->
+    <main class="full-width-main">
+        <div class="content-card full-width-card">
+            <h2 class="page-title">My Thoughts & Updates</h2>
+            <p class="page-subtitle">A collection of articles, insights, and news from Grayson Garrett.</p>
+
+            <article class="blog-post">
+                <div class="blog-post-header">
+                    <h3 class="blog-post-title">First Steps into Adaptive Problem Solving</h3>
+                    <p class="blog-post-meta">Published on <time datetime="2025-06-15">June 15, 2025</time> | By Grayson Garrett</p>
+                </div>
+                <div class="blog-post-body text-content">
+                    <p>
+                        Welcome to my first blog post! In this article, I want to share some initial thoughts on the importance of adaptive solutions in today's rapidly changing landscape. The challenges we face are rarely static, demanding approaches that can evolve and flex with new information.
+                    </p>
+                    <p>
+                        My journey into "Innovating Adaptive Solutions for Dynamic Problems" began with observing how rigid systems often fail when confronted with unforeseen variables. By embracing flexibility and continuous learning, we can build more resilient and effective strategies.
+                    </p>
+                    <h4>Key Principles:</h4>
+                    <ul>
+                        <li>**Agility:** The ability to move quickly and easily.</li>
+                        <li>**Resilience:** The capacity to recover quickly from difficulties.</li>
+                        <li>**Learning Loops:** Continuously gathering feedback and adapting.</li>
+                    </ul>
+                    <p>
+                        Stay tuned for more in-depth discussions on specific projects and methodologies. Your feedback and engagement are always welcome!
+                    </p>
+                    </div>
+                <a href="#top" class="read-more">Back to top of page</a>
+            </article>
+            </div>
+    </main>
+<!--===========
+    Footer
+============-->
+    <footer>
+        <p>&copy; 2025 Grayson Garrett. All rights reserved.</p>
+    </footer>
+<!--================
+    Java Script 
+=================--->
+    <script src="script.js"></script>
+<!--=======
+    End
+========--->
+    </body>
+</html>

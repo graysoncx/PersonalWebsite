@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery - Grayson Garrett</title>
+<!--================
+    Google Fonts
+==================-->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<!--======================
+    External Stylesheet
+=========================-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--===============
+  Navigation Bar
+================-->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-brand">Grayson Garrett</a>
+ <!--================
+    Desktop Menu
+=================-->           
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="blog.html">Blog</a>
+                <div class="dropdown">
+                    <button class="dropdown-button">About <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+                    <div class="dropdown-menu">
+                        <a href="bio.html" class="dropdown-item">Biography</a>
+                        <a href="mission.html" class="dropdown-item">Mission</a>
+                        <a href="projects.html" class="dropdown-item">Projects</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-button">Products and Services<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+                    <div class="dropdown-menu">
+                        <a href="services.html" class="dropdown-item">Services</a>
+                        <a href="store.html" class="dropdown-item">Store</a>
+                        <a href="delivery.html" class="dropdown-item">Delivery</a>
+                    </div>
+                </div>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="contact.html">Contact</a>
+            </div>
+<!--=======================
+    Mobile Menu Button
+========================-->            
+            <button id="mobile-menu-button">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+ <!--====================
+       Mobile Menu
+=====================-->       
+        <div id="mobile-menu" class="container">
+            <a href="index.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+ <!--=================
+    Main Content
+==================-->   
+    <main>
+        <div class="content-card">
+            <h2>Local Delivery Service</h2>
+            <div class="delivery-layout">
+                <div class="delivery-photo-large">
+                    <div class="map-container">
+                        <div id="map1" class="delivery-map"></div>
+                        <div id="map2" class="delivery-map"></div>
+                        <div id="map3" class="delivery-map"></div>
+                    </div>
+                </div>
+                <div class="delivery-details">
+                    <div class="delivery-photo-small">
+                        <div class="delivery-img-placeholder small"><span><img src="imgs/frogo.png"></span></div>
+                    </div>
+                    <div class="delivery-text">
+                        <h3>Fast, Eco-Friendly Bicycle Delivery</h3>
+                        <p><strong>Travel Range:</strong> I offer delivery within a 5-mile radius of downtown West Haven. Perfect for getting your items quickly and without the carbon footprint.</p>
+                        <p><strong>Delivery Rates:</strong>
+                           <ul>
+                               <li>Under 2 miles: $5</li>
+                               <li>2-5 miles: $10</li>
+                           </ul>
+                        </p>
+                        <p><strong>Limitations:</strong> My carrying capacity is limited to what fits safely in a standard Swiss Gear backpack and a front-mounted milk crate. This is ideal for small to medium-sized items. Please contact me to confirm if your item is eligible for bicycle delivery.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+<!--===========
+    Footer
+============-->
+<footer>
+        <p>&copy; 2025 Grayson Garrett. All rights reserved.</p>
+    </footer>
+<!--================
+    Java Script 
+=================--->
+    <script src="script.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD23i-qiyrR-z_DbQ-shBBPlc5al9D-TRc&callback=initMap"></script>
+<!--=======
+    End
+========---> 
+</body>
+</html>

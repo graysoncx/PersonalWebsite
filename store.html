@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store - Grayson Garrett</title>
+<!--================
+    Google Fonts
+==================-->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<!--======================
+    External Stylesheet
+=========================-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--===============
+  Navigation Bar
+================-->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-brand">Grayson Garrett</a>
+<!--================
+    Desktop Menu
+=================-->
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="blog.html">Blog</a>
+                <div class="dropdown">
+                    <button class="dropdown-button">About <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+                    <div class="dropdown-menu">
+                        <a href="bio.html" class="dropdown-item">Biography</a>
+                        <a href="mission.html" class="dropdown-item">Mission</a>
+                        <a href="projects.html" class="dropdown-item">Projects</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-button">Products and Services<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+                    <div class="dropdown-menu">
+                        <a href="services.html" class="dropdown-item">Services</a>
+                        <a href="store.html" class="dropdown-item">Store</a>
+                        <a href="delivery.html" class="dropdown-item">Delivery</a>
+                    </div>
+                </div>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="contact.html">Contact</a>
+            </div>
+<!--=======================
+    Mobile Menu Button
+========================-->            
+            <button id="mobile-menu-button">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+<!--====================
+       Mobile Menu
+=====================-->        
+        <div id="mobile-menu" class="container">
+            <a href="index.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+<!--=================
+    Main Content
+==================-->
+    <main>
+        <div class="content-card">
+            <h2>Store</h2>
+            <p class="intro-text">A collection of unique finds, custom creations, and useful tools. Click on any item to be taken to its eBay or Facebook Marketplace listing.</p>
+            
+            <div class="store-grid">
+                <a href="#" class="store-item-link">
+                    <div class="store-item">
+                        <div class="store-img-placeholder"><img src=s_imgs/friser.jpg></div>
+                        <div class="store-item-info">
+                            <p><strong>Foldable Riser</strong></p>
+                            <p><strong>Condition:</strong> Used - Good</p>
+                            <p><strong>Price:</strong> $25.00</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="store-item-link">
+                    <div class="store-item">
+                        <div class="store-img-placeholder"><img src="s_imgs/umbrella.jpg"></div>
+                        <div class="store-item-info">
+                            <p><strong>Grey Portable Umbrella</strong></p>
+                            <p><strong>Condition:</strong> New (3D Print)</p>
+                            <p><strong>Price:</strong> $15.00</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="store-item-link">
+                    <div class="store-item">
+                        <div class="store-img-placeholder"><img src="s_imgs/hdd.jpg"></div>
+                        <div class="store-item-info">
+                            <p><strong>500 GB HDD</strong></p>
+                            <p><strong>Condition:</strong> New (Dropshipped)</p>
+                            <p><strong>Price:</strong> $19.99</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="store-item-link">
+                    <div class="store-item">
+                        <div class="store-img-placeholder"><span>Item Image</span></div>
+                        <div class="store-item-info">
+                            <p><strong>Condition:</strong> Refurbished</p>
+                            <p><strong>Price:</strong> $120.00</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="store-item-link">
+                    <div class="store-item">
+                        <div class="store-img-placeholder"><span>Item Image</span></div>
+                        <div class="store-item-info">
+                            <p><strong>Condition:</strong> For Parts</p>
+                            <p><strong>Price:</strong> $10.00</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="store-item-link">
+                    <div class="store-item">
+                        <div class="store-img-placeholder"><span>Item Image</span></div>
+                        <div class="store-item-info">
+                            <p><strong>Condition:</strong> New</p>
+                            <p><strong>Price:</strong> $45.50</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </main>
+<!--===========
+    Footer
+============-->
+    <footer>
+        <p>&copy; 2025 Grayson Garrett. All rights reserved.</p>
+    </footer>
+<!--================
+    Java Script 
+=================--->
+    <script src="script.js"></script>
+<!--=======
+    End
+========---> 
+</body>
+</html>

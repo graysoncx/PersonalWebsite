@@ -53,7 +53,7 @@ body {
 }
 
 .nav-links {
-    display: none; /* Hidden on mobile by default */
+    display: none; /* Hidden on mobile */
     align-items: center;
 }
 
@@ -130,52 +130,18 @@ body {
     color: #E0BBE4;
     cursor: pointer;
 }
-
 #mobile-menu {
     display: none; /* Hidden by default */
     padding-top: 1rem;
-    background-color: #331A40; /* Add a background to the mobile menu itself for better contrast */
-    border-top: 1px solid #5F256B; /* Optional: add a top border */
-    position: absolute; /* Allows it to overlay content below */
-    width: 100%;
-    left: 0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Match navbar shadow */
 }
-
 #mobile-menu.show {
     display: block;
 }
-
-#mobile-menu a,
-#mobile-menu .dropdown-button { /* Target both links AND dropdown buttons */
+#mobile-menu a, #mobile-menu .dropdown-button {
     display: block;
     width: 100%;
     text-align: left;
-    padding: 0.75rem 1.5rem; /* Increase padding for better touch targets */
-    color: #E0BBE4; /* Set default color for mobile menu items */
-    text-decoration: none; /* Remove underline */
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
-
-#mobile-menu a:hover,
-#mobile-menu .dropdown-button:hover {
-    background-color: #5F256B; /* Highlight on hover */
-    color: #FFD700; /* Change text color on hover */
-}
-
-/* Optional: Style for dropdown menus within mobile menu if you implement them fully */
-#mobile-menu .dropdown-menu {
-    position: static; /* Make it flow naturally, not absolute */
-    background-color: rgba(0, 0, 0, 0.1); /* Slightly different background for sub-items */
-    box-shadow: none;
-    border-radius: 0;
-    padding-left: 1rem; /* Indent sub-items */
-}
-
-#mobile-menu .dropdown-menu .dropdown-item {
-    padding-left: 2rem; /* Further indent dropdown items */
-}
-
 
 /* ========================================
   Main Content
@@ -294,215 +260,300 @@ footer {
   ======================================== */
 @media (min-width: 768px) { /* md breakpoint */
     .nav-links {
-        display: flex; /* Show desktop menu */
+        display: flex;
         gap: 1rem;
     }
+/* Mobile Menu */
+#mobile-menu-button {
+    display: block; /* Visible on mobile */
+    background: none;
+    border: none;
+    color: #E0BBE4; /* Keep the button icon color */
+    cursor: pointer;
+}
+#mobile-menu {
+    display: none; /* Hidden by default */
+    padding-top: 1rem;
+    background-color: #331A40; /* Add a background to the mobile menu itself for better contrast */
+    border-top: 1px solid #5F256B; /* Optional: add a top border */
+    position: absolute; /* Allows it to overlay content below */
+    width: 100%;
+    left: 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Match navbar shadow */
+}
+#mobile-menu.show {
+    display: block;
+}
+#mobile-menu a,
+#mobile-menu .dropdown-button { /* Target both links AND dropdown buttons */
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem 1.5rem; /* Increase padding for better touch targets */
+    color: #E0BBE4; /* Set default color for mobile menu items */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+#mobile-menu a:hover,
+#mobile-menu .dropdown-button:hover {
+    background-color: #5F256B; /* Highlight on hover */
+    color: #FFD700; /* Change text color on hover */
+}
 
-    #mobile-menu-button {
-        display: none; /* Hide mobile menu button on desktop */
-    }
+/* Optional: Style for dropdown menus within mobile menu if you implement them fully */
+#mobile-menu .dropdown-menu {
+    position: static; /* Make it flow naturally, not absolute */
+    background-color: rgba(0, 0, 0, 0.1); /* Slightly different background for sub-items */
+    box-shadow: none;
+    border-radius: 0;
+    padding-left: 1rem; /* Indent sub-items */
+}
 
-    #mobile-menu {
-        display: none; /* Ensure mobile menu is hidden on desktop */
-    }
+#mobile-menu .dropdown-menu .dropdown-item {
+    padding-left: 2rem; /* Further indent dropdown items */
+}
+/* ========================================
+  Additions for New Pages
+  ======================================== */
 
-    /* General content alignment for text pages */
-    .text-content {
-        text-align: left;
-        margin-top: 1.5rem;
-    }
-    .text-content p {
-        margin-bottom: 1rem;
-    }
+/* General content alignment for text pages */
+.text-content {
+    text-align: left;
+    margin-top: 1.5rem;
+}
+.text-content p {
+    margin-bottom: 1rem;
+}
 
-    .mission-quote {
-        font-size: 1.5rem;
-        font-style: italic;
-        font-weight: 600;
-        color: #FFD700;
-        border-left: 4px solid #FFD700;
-        padding-left: 1rem;
-        margin: 1.5rem 0;
-    }
+.mission-quote {
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 600;
+    color: #FFD700;
+    border-left: 4px solid #FFD700;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+}
 
 
-    /* Styles for Services & Projects pages */
-    .full-width-main {
-        align-items: flex-start; /* Align content to the top */
-    }
+/* Styles for Services & Projects pages */
+.full-width-main {
+    align-items: flex-start; /* Align content to the top */
+}
 
-    .full-width-card {
-        max-width: 100%;
-    }
+.full-width-card {
+    max-width: 100%;
+}
 
-    .service-element {
-        background-color: rgba(0, 0, 0, 0.2);
-        border-radius: 0.75rem;
-        margin-bottom: 2rem;
-        overflow: hidden;
-        position: relative;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
+.service-element {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0.75rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
 
-    .service-img-placeholder {
-        width: 100%;
-        /* Remove fixed height */
-        /* height: 300px; */
-        background-color: rgba(255, 255, 255, 0.05);
-        border-bottom: 2px solid #5F256B;
-        overflow: hidden;
-        /* Add aspect ratio for consistent scaling */
-        padding-bottom: 56.25%; /* 16:9 Aspect Ratio (height / width * 100) */
-        position: relative; /* Needed for absolute positioning of the image */
-    }
-    .service-img-placeholder img {
-        position: absolute; /* Position the image absolutely within the placeholder */
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* This is crucial: scales the image to fill the container while maintaining aspect ratio, cropping if necessary */
-        display: block; /* Ensures the image behaves as a block element */
-    }
+.service-img-placeholder {
+    width: 100%;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-bottom: 2px solid #5F256B;
+    overflow: hidden;
+}
+.service-img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-    .service-description {
-        padding: 1.5rem;
-        text-align: left;
-    }
+.service-description {
+    padding: 1.5rem;
+    text-align: left;
+}
 
-    .service-description h3 {
-        margin-top: 0;
-        font-size: 1.75rem;
-        color: #FFD700;
-    }
+.service-description h3 {
+    margin-top: 0;
+    font-size: 1.75rem;
+    color: #FFD700;
+}
 
-    .service-rate {
-        position: absolute;
-        bottom: 1.5rem;
-        right: 1.5rem;
-        background-color: #FFD700;
-        color: #331A40;
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        font-weight: 600;
-        font-size: 1.1rem;
-    }
+.service-rate {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background-color: #FFD700;
+    color: #331A40;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
 
-    /* New/Adjusted styles for Project elements to ensure images fit */
-    .project-element {
-        background-color: rgba(0, 0, 0, 0.2);
-        border-radius: 0.75rem;
-        margin-bottom: 2rem;
-        overflow: hidden;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
+/* New/Adjusted styles for Project elements to ensure images fit */
+.project-element {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0.75rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
 
-    .project-img-placeholder {
-        width: 100%;
-        height: 300px; /* Fixed height for consistency */
-        background-color: rgba(255, 255, 255, 0.05);
-        border-bottom: 2px solid #5F256B;
-        overflow: hidden; /* Crucial for cropping excess image parts */
-        display: flex; /* Use flexbox to center the image if aspect ratio differs */
-        align-items: center;
-        justify-content: center;
-    }
+.project-img-placeholder {
+    width: 100%;
+    height: 300px; /* Fixed height for consistency */
+    background-color: rgba(255, 255, 255, 0.05);
+    border-bottom: 2px solid #5F256B;
+    overflow: hidden; /* Crucial for cropping excess image parts */
+    display: flex; /* Use flexbox to center the image if aspect ratio differs */
+    align-items: center;
+    justify-content: center;
+}
 
-    .project-img-placeholder img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* This is the key: it scales the image to cover the area, cropping if necessary */
-        display: block; /* Ensures the image behaves as a block element */
-    }
+.project-img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This is the key: it scales the image to cover the area, cropping if necessary */
+    display: block; /* Ensures the image behaves as a block element */
+}
 
-    .project-description {
-        padding: 1.5rem;
-        text-align: left;
-    }
+.project-description {
+    padding: 1.5rem;
+    text-align: left;
+}
 
-    .project-description h3 {
-        margin-top: 0;
-        font-size: 1.75rem;
-        color: #FFD700;
-    }
+.project-description h3 {
+    margin-top: 0;
+    font-size: 1.75rem;
+    color: #FFD700;
+}
 
-    .project-link {
-        margin-top: 1rem;
-        text-align: right;
-    }
+.project-link {
+    margin-top: 1rem;
+    text-align: right;
+}
 
-    .project-link a {
-        color: #FFD700;
-        text-decoration: none;
-        font-weight: 600;
-        padding: 0.5rem 1rem;
-        border: 1px solid #FFD700;
-        border-radius: 0.375rem;
-        transition: background-color 0.3s ease, color 0.3s ease;
-    }
+.project-link a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: 1px solid #FFD700;
+    border-radius: 0.375rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-    .project-link a:hover {
-        background-color: #FFD700;
-        color: #331A40;
-    }
+.project-link a:hover {
+    background-color: #FFD700;
+    color: #331A40;
+}
 
-    /* Styles for Store Page */
+/* Styles for Store Page */
+.store-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted for responsiveness */
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.store-item-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.store-item {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.store-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.store-img-placeholder {
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+    background-color: rgba(255, 255, 255, 0.05);
+    /* Remove display: flex, align-items, justify-content for image centering */
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.5);
+    overflow: hidden; /* Ensure image stays within bounds */
+}
+
+.store-img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This will make sure the image covers the area without distortion */
+    display: block; /* Ensures the image behaves as a block element */
+}
+
+.store-item-info {
+    padding: 1rem;
+    text-align: left;
+}
+.store-item-info p {
+    margin: 0.25rem 0;
+}
+
+/* Styles for Delivery Page */
+.delivery-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.delivery-photo-large, .delivery-details {
+    flex: 1;
+}
+
+.delivery-img-placeholder {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.delivery-img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This scales the image to fill the container, cropping if necessary */
+    display: block; /* Removes any extra space below the image */
+}
+
+.delivery-text ul {
+    padding-left: 20px;
+}
+
+
+/* ========================================
+  Responsive Additions
+  ======================================== */
+@media (min-width: 768px) { /* md breakpoint */
     .store-grid {
         grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
     }
 
-    .store-item-link {
-        text-decoration: none;
-        color: inherit;
-    }
-
-    .store-item {
-        background-color: rgba(0, 0, 0, 0.2);
-        border-radius: 0.75rem;
-        overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .store-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-    }
-
-    .store-img-placeholder {
-        width: 100%;
-        height: 200px; /* Adjust height as needed */
-        background-color: rgba(255, 255, 255, 0.05);
-        /* Remove display: flex, align-items, justify-content for image centering */
-        font-size: 1.2rem;
-        color: rgba(255, 255, 255, 0.5);
-        overflow: hidden; /* Ensure image stays within bounds */
-    }
-
-    .store-img-placeholder img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* This will make sure the image covers the area without distortion */
-        display: block; /* Ensures the image behaves as a block element */
-    }
-
-    .store-item-info {
-        padding: 1rem;
-        text-align: left;
-    }
-    .store-item-info p {
-        margin: 0.25rem 0;
-    }
-
-    /* Styles for Delivery Page */
     .delivery-layout {
         flex-direction: row; /* Side-by-side on desktop */
     }
-} /* End of @media (min-width: 768px) */
-
-
+}
 /*=======================================
 Google Maps
 ========================================*/
+
+/* Remove the existing #map style */
+/* #map {
+      height: 400px;
+      width: 100%;
+    } */
 
 .map-container {
     display: flex;
@@ -639,7 +690,7 @@ Blog
         font-size: 2rem;
     }
 }
-/*for project-specific styles, mirroring service-element structure */
+/* Add this new section for project-specific styles, mirroring service-element structure */
 .project-element {
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 0.75rem;
@@ -662,7 +713,7 @@ Blog
 
 .project-img-placeholder img {
     width: 100%; /* Make image fill the width of its container */
-    height: 100%;
+    height: 100%; /* Make image fill the height of its container */
     object-fit: cover; /* This is the key: scales the image to cover the area, cropping if necessary */
     display: block; /* Ensures the image behaves as a block element */
 }

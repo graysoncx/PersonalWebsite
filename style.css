@@ -124,7 +124,7 @@ body {
 
 /* Mobile Menu */
 #mobile-menu-button {
-    display: block; /* Visible on mobile */
+    display: none; /* Visible on mobile */
     background: none;
     border: none;
     color: #E0BBE4;

@@ -37,32 +37,43 @@
         </div>
     </header>
 
-
-
     <main>
-        <div class="content-card">
+        <div class="delivery-section-content container">
             <h2>Local Delivery Service</h2>
             <div class="delivery-layout">
-                <div class="delivery-photo-large">
-                    <div class="map-container">More actions
-                        <div id="map1" class="delivery-map"></div>
-                        <div id="map2" class="delivery-map"></div>
-                        <div id="map3" class="delivery-map"></div>
-                    </div>
-                </div>
-                <div class="delivery-details">
+                <div class="frogo-image-and-description">
                     <div class="delivery-photo-small">
-                        <div class="delivery-img-placeholder small"><span><img src="blondfry/frogo.png"></span></div>
+                        <div class="delivery-img-placeholder small">
+                            <span><img src="blondfry/frogo.png" alt="Frogo bicycle delivery"></span>
+                        </div>
                     </div>
                     <div class="delivery-text">
                         <h3>Fast, Eco-Friendly Bicycle Delivery</h3>
                         <p><strong>Travel Range:</strong> I offer delivery within a 5-mile radius of downtown West Haven. Perfect for getting your items quickly and without the carbon footprint.</p>
+                        <p>Whether you're at home, at work, or hosting a gathering, I've got you covered. My dedicated efforts ensure your order arrives fresh, and on time. I prioritize eco-friendly practices whenever possible to make every delivery a pleasant experience. Below, you can see the primary delivery zones.</p>
+                        <p>If you're outside these areas, don't hesitate to contact me. I'll do my best to accommodate your request. Thank you for choosing my service for your culinary needs. I look forward to serving you!</p>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15443.91636253457!2d-72.94639935!3d41.278385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e7d99a4e320d91%3A0xc3f5f3e9f4a1b0b7!2sDowntown%20West%20Haven%2C%20West%20Haven%2C%20CT%2006516!5e0!3m2!1sen!2sus!4v1718742880153!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15443.91636253457!2d-72.94639935!3d41.278385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e7d99a4e320d91%3A0xc3f5f3e9f4a1b0b7!2sDowntown%20West%20Haven%2C%20West%20Haven%2C%20CT%2006516!5e0!3m2!1sen!2sus!4v1718742880153!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15443.91636253457!2d-72.94639935!3d41.278385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e7d99a4e320d91%3A0xc3f5f3e9f4a1b0b7!2sDowntown%20West%20Haven%2C%20West%20Haven%2C%20CT%2006516!5e0!3m2!1sen!2sus!4v1718742880153!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <footer>
         <p>&copy; 2025 Grayson Garrett. All rights reserved.</p>
     </footer>
 
-    <script src="script.js">
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            var mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('show');
+        });
     </script>
 
 </body>

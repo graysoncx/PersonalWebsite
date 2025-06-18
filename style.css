@@ -61,7 +61,7 @@ body {
     color: #E0BBE4;
     text-decoration: none;
     font-size: 1.1rem;
-    padding: 0.5rem 1rem; /* Corrected from incomplete padding in original */
+    padding: 0.5rem 1rem;
     border-radius: 0.375rem;
     transition: color 0.3s ease;
 }
@@ -132,14 +132,13 @@ body {
 }
 
 #mobile-menu {
-    /* Removed display: none; here. Its visibility will be controlled by JS 'show' class */
     padding-top: 1rem;
-    background-color: #331A40; /* Add a background to the mobile menu itself for better contrast */
-    border-top: 1px solid #5F256B; /* Optional: add a top border */
-    position: absolute; /* Allows it to overlay content below */
+    background-color: #331A40;
+    border-top: 1px solid #5F256B;
+    position: absolute;
     width: 100%;
     left: 0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Match navbar shadow */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     display: none; /* Initially hidden, will be shown by JS */
 }
 
@@ -148,33 +147,33 @@ body {
 }
 
 #mobile-menu a,
-#mobile-menu .dropdown-button { /* Target both links AND dropdown buttons */
+#mobile-menu .dropdown-button {
     display: block;
     width: 100%;
     text-align: left;
-    padding: 0.75rem 1.5rem; /* Increase padding for better touch targets */
-    color: #E0BBE4; /* Set default color for mobile menu items */
-    text-decoration: none; /* Remove underline */
+    padding: 0.75rem 1.5rem;
+    color: #E0BBE4;
+    text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #mobile-menu a:hover,
 #mobile-menu .dropdown-button:hover {
-    background-color: #5F256B; /* Highlight on hover */
-    color: #FFD700; /* Change text color on hover */
+    background-color: #5F256B;
+    color: #FFD700;
 }
 
 /* Optional: Style for dropdown menus within mobile menu if you implement them fully */
 #mobile-menu .dropdown-menu {
-    position: static; /* Make it flow naturally, not absolute */
-    background-color: rgba(0, 0, 0, 0.1); /* Slightly different background for sub-items */
+    position: static;
+    background-color: rgba(0, 0, 0, 0.1);
     box-shadow: none;
     border-radius: 0;
-    padding-left: 1rem; /* Indent sub-items */
+    padding-left: 1rem;
 }
 
 #mobile-menu .dropdown-menu .dropdown-item {
-    padding-left: 2rem; /* Further indent dropdown items */
+    padding-left: 2rem;
 }
 
 
@@ -184,8 +183,8 @@ body {
 main {
     flex-grow: 1;
     display: flex;
-    /* Removed align-items: center; and justify-content: center; from here
-       as the .delivery-content will handle its own centering/layout */
+    align-items: center;
+    justify-content: center;
     padding: 2rem 1rem;
 }
 
@@ -300,41 +299,82 @@ img {
 }
 
 /* Styles for the main content area for delivery page */
-.delivery-content {
-    display: flex;
-    flex-direction: column; /* Default to column for mobile */
-    align-items: center; /* Center items horizontally on mobile */
-    width: 100%; /* Take full width within main's padding */
-    max-width: 1200px; /* Limit overall content width */
-    margin: 0 auto; /* Center the content within main */
-}
-
-.frogo-image {
+/* Re-purposing .content-card for the overall delivery section's background */
+.delivery-section-content {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     width: 100%;
-    max-width: 600px; /* Limit max width for desktop */
-    margin-bottom: 20px; /* Space below the image */
+    max-width: 1100px; /* Use container max-width */
+    margin: 2rem auto; /* Center the content block and add vertical spacing */
 }
 
-.delivery-description {
-    margin-bottom: 20px; /* Space below description on mobile */
+.delivery-layout {
+    /* Mobile (default) layout - stacked */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    gap: 20px; /* Space between description and maps */
+}
+
+.delivery-photo-small { /* This will now contain frogo.png */
+    width: 100%; /* Takes full width on mobile */
+    text-align: center; /* Ensures image inside is centered */
+}
+
+.delivery-img-placeholder.small { /* frogo.png wrapper */
+    display: inline-block; /* Allows auto margins to center it */
+    width: 100%;
+    max-width: 250px; /* Smaller max-width for frogo.png on desktop */
+    height: auto;
+    overflow: hidden;
+    border-radius: 0.5rem; /* Consistent styling */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.delivery-img-placeholder.small img {
+    width: 100%; /* Ensure frogo.png fills its container */
+    height: auto;
+    display: block;
+}
+
+.delivery-text {
     text-align: center; /* Center text on mobile */
+    width: 100%;
+}
+.delivery-text h3 {
+    color: #FFD700;
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 
+/* Existing Map Styles - Adjusting for responsiveness and iframe use */
 .map-container {
     display: flex;
-    flex-direction: column; /* Stack maps on mobile */
+    flex-direction: column; /* Stack maps vertically on mobile */
     gap: 15px; /* Space between maps */
-    width: 100%; /* Take full width on mobile */
-    align-items: center; /* Center maps on mobile */
+    width: 100%; /* Maps take full width on mobile */
+    align-items: center; /* Center maps horizontally on mobile */
+}
+
+.delivery-map { /* Will be replaced by iframes directly */
+    /* Remove these properties as they were for placeholder divs, not iframes */
+    /* height: 300px;
+    flex: 1;
+    min-width: 280px; */
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .map-container iframe {
-    width: 100%; /* Make maps responsive */
-    max-width: 400px; /* Adjust as needed for map size */
-    height: 300px; /* Adjust as needed */
+    width: 100%; /* Make iframes responsive to their container */
+    max-width: 400px; /* Limit individual map width on mobile */
+    height: 300px; /* Fixed height for maps */
     border: none; /* Remove default iframe border */
-    border-radius: 0.5rem; /* Add border-radius to maps */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Add subtle shadow to maps */
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 /* ========================================
@@ -374,8 +414,8 @@ img {
     }
 
     /* Styles for Services & Projects pages */
-    .full-width-main {
-        align-items: flex-start; /* Align content to the top */
+    main {
+        align-items: flex-start; /* Align content to the top for most pages */
     }
 
     .full-width-card {
@@ -393,23 +433,17 @@ img {
 
     .service-img-placeholder {
         width: 100%;
-        /* Remove fixed height */
-        /* height: 300px; */
-        background-color: rgba(255, 255, 255, 0.05);
-        border-bottom: 2px solid #5F256B;
-        overflow: hidden;
-        /* Add aspect ratio for consistent scaling */
-        padding-bottom: 56.25%; /* 16:9 Aspect Ratio (height / width * 100) */
-        position: relative; /* Needed for absolute positioning of the image */
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        position: relative;
     }
     .service-img-placeholder img {
-        position: absolute; /* Position the image absolutely within the placeholder */
+        position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover; /* This is crucial: scales the image to fill the container while maintaining aspect ratio, cropping if necessary */
-        display: block; /* Ensures the image behaves as a block element */
+        object-fit: cover;
+        display: block;
     }
 
     .service-description {
@@ -435,22 +469,23 @@ img {
         font-size: 1.1rem;
     }
 
-    /* New/Adjusted styles for Project elements to ensure images fit */
+    /* Project elements */
     .project-element {
         background-color: rgba(0, 0, 0, 0.2);
         border-radius: 0.75rem;
         margin-bottom: 2rem;
         overflow: hidden;
+        position: relative;
         box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
     .project-img-placeholder {
         width: 100%;
-        height: 300px; /* Fixed height for consistency */
+        height: 300px;
         background-color: rgba(255, 255, 255, 0.05);
         border-bottom: 2px solid #5F256B;
-        overflow: hidden; /* Crucial for cropping excess image parts */
-        display: flex; /* Use flexbox to center the image if aspect ratio differs */
+        overflow: hidden;
+        display: flex;
         align-items: center;
         justify-content: center;
     }
@@ -458,8 +493,8 @@ img {
     .project-img-placeholder img {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* This is the key: it scales the image to cover the area, cropping if necessary */
-        display: block; /* Ensures the image behaves as a block element */
+        object-fit: cover;
+        display: block;
     }
 
     .project-description {
@@ -517,20 +552,18 @@ img {
 
     .store-img-placeholder {
         width: 100%;
-        height: 200px; /* Adjust height as needed */
+        height: 200px;
         background-color: rgba(255, 255, 255, 0.05);
-        /* Removed display: flex, align-items, justify-content for image centering,
-           as object-fit: cover will handle it with width/height 100% */
         font-size: 1.2rem;
         color: rgba(255, 255, 255, 0.5);
-        overflow: hidden; /* Ensure image stays within bounds */
+        overflow: hidden;
     }
 
     .store-img-placeholder img {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* This will make sure the image covers the area without distortion */
-        display: block; /* Ensures the image behaves as a block element */
+        object-fit: cover;
+        display: block;
     }
 
     .store-item-info {
@@ -542,61 +575,61 @@ img {
     }
 
     /* DESKTOP LAYOUT FOR DELIVERY PAGE */
-    .delivery-content {
+    .delivery-layout {
         display: grid;
+        /* Define grid areas:
+           top-left for frogo.png and description
+           top-right for maps */
         grid-template-areas:
-            "frogo frogo"
-            "maps description"; /* Define layout for desktop */
-        grid-template-columns: 2fr 1fr; /* Adjust column widths (maps left, description right) */
-        gap: 30px; /* Space between grid items */
+            "frogo-desc maps-area";
+        grid-template-columns: 2fr 1fr; /* Frogo/description takes 2 parts, maps takes 1 part */
+        gap: 30px; /* Space between grid areas */
+        align-items: start; /* Align content to the top of their grid cells */
     }
 
-    .frogo-image {
-        grid-area: frogo;
-        width: 100%; /* Take full width of its grid area */
-        max-width: 100%; /* Allow it to scale up to its container */
-        margin-bottom: 0; /* Remove bottom margin here */
+    .delivery-photo-small { /* Contains frogo.png and its placeholder */
+        order: 1; /* Ensure frogo.png is at the top of its group */
+        text-align: center; /* Center the image within its placeholder */
+        /* No specific width/height here, handled by .delivery-img-placeholder.small */
     }
 
-    .delivery-description {
-        grid-area: description;
+    .delivery-img-placeholder.small {
+        margin: 0 auto; /* Center the image placeholder */
+        /* max-width is already set to 250px above */
+    }
+
+    .delivery-text { /* Contains the description */
+        order: 2; /* Ensure description is below frogo.png */
         text-align: left; /* Align text left on desktop */
-        margin-bottom: 0; /* Remove bottom margin here */
     }
 
     .map-container {
-        grid-area: maps;
-        flex-direction: row; /* Display maps in a row on desktop */
-        justify-content: space-around; /* Distribute maps evenly */
-        flex-wrap: wrap; /* Allow maps to wrap if too many */
+        grid-area: maps-area; /* Places maps in the right column */
+        flex-direction: column; /* Stack maps vertically on desktop */
+        justify-content: flex-start; /* Align maps to the top of their column */
+        align-items: center; /* Center maps within their column */
+        gap: 20px; /* Space between stacked maps */
+        margin-bottom: 0; /* Remove bottom margin if present from mobile */
     }
 
     .map-container iframe {
-        width: calc(33% - 20px); /* Roughly 3 maps per row with spacing */
+        width: 100%; /* Maps take full width of their smaller column */
         max-width: none; /* Allow maps to scale within their column */
+        height: 250px; /* Adjust height for desktop maps as needed */
     }
 } /* End of @media (min-width: 768px) */
 
 
 /*=======================================
-Google Maps (General styles, moved specific delivery map styles into .delivery-content)
+Google Maps (General styles - these are now mostly superseded by .map-container iframe rules)
 ========================================*/
 
-/* Removed .map-container and .delivery-map from here,
-   as specific delivery page map styling is now within .delivery-content */
-
-/* Adjustments for responsive design for maps
-   This media query for max-width is effectively superseded by the .delivery-content
-   mobile styles, but kept here for general map usage if needed elsewhere. */
-@media (max-width: 767px) { /* Adjust for smaller screens (mobile) */
-    /* .delivery-map rules were moved into the .map-container iframe within .delivery-content */
-    /* .map-container rules were moved into the .delivery-content map-container */
-}
+/* Removed .delivery-map and .map-container from the specific @media (max-width: 767px)
+   block as they are covered by the general .map-container and .map-container iframe rules */
 
 /*=======================================
 Blog
 ========================================*/
-/* Add this to your style.css */
 
 .page-title {
     font-size: 2.5rem;
@@ -612,22 +645,22 @@ Blog
 }
 
 .blog-post {
-    background-color: rgba(0, 0, 0, 0.2); /* Slightly darker background than content-card */
+    background-color: rgba(0, 0, 0, 0.2);
     padding: 2rem;
     border-radius: 0.75rem;
-    margin-bottom: 2rem; /* Space between posts */
+    margin-bottom: 2rem;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    text-align: left; /* Ensure text is left-aligned within the post */
+    text-align: left;
 }
 
 .blog-post-header {
     margin-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(255, 215, 0, 0.3); /* Subtle separator */
+    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
     padding-bottom: 1rem;
 }
 
 .blog-post-title {
-    font-family: 'Orbitron', sans-serif; /* Example: Use Orbitron for titles */
+    font-family: 'Orbitron', sans-serif;
     font-size: 2rem;
     color: #FFD700;
     margin-top: 0;
@@ -661,7 +694,7 @@ Blog
     height: auto;
     border-radius: 0.5rem;
     margin: 1.5rem 0;
-    display: block; /* Ensures it behaves like a block element for margin */
+    display: block;
     margin-left: auto;
     margin-right: auto;
 }
@@ -680,7 +713,7 @@ Blog
     text-decoration: underline;
 }
 
-/* Responsive adjustments for blog posts if needed */
+/* Responsive adjustments for blog posts */
 @media (max-width: 767px) {
     .blog-post-title {
         font-size: 1.5rem;
@@ -689,32 +722,33 @@ Blog
         font-size: 2rem;
     }
 }
-/* Add this new section for project-specific styles, mirroring service-element structure */
+
+/* Project-specific styles */
 .project-element {
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 0.75rem;
     margin-bottom: 2rem;
     overflow: hidden;
-    position: relative; /* Keep this if you plan to add absolute positioning like service-rate */
+    position: relative;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .project-img-placeholder {
     width: 100%;
-    height: 300px; /* Standardized height for project images */
-    background-color: rgba(255, 255, 255, 0.05); /* Placeholder background */
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.05);
     border-bottom: 2px solid #5F256B;
-    overflow: hidden; /* Ensures image doesn't spill out */
-    display: flex; /* Use flexbox to center image if it doesn't cover fully */
+    overflow: hidden;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .project-img-placeholder img {
-    width: 100%; /* Make image fill the width of its container */
+    width: 100%;
     height: 100%;
-    object-fit: cover; /* This is the key: it scales the image to cover the area, cropping if necessary */
-    display: block; /* Ensures the image behaves as a block element */
+    object-fit: cover;
+    display: block;
 }
 
 .project-description {
@@ -730,7 +764,7 @@ Blog
 
 .project-link {
     margin-top: 1rem;
-    text-align: right; /* Align the link to the right */
+    text-align: right;
 }
 
 .project-link a {

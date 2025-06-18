@@ -61,7 +61,7 @@ body {
     color: #E0BBE4;
     text-decoration: none;
     font-size: 1.1rem;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem; /* Corrected from incomplete padding in original */
     border-radius: 0.375rem;
     transition: color 0.3s ease;
 }
@@ -184,8 +184,8 @@ body {
 main {
     flex-grow: 1;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* Removed align-items: center; and justify-content: center; from here
+       as the .delivery-content will handle its own centering/layout */
     padding: 2rem 1rem;
 }
 
@@ -291,7 +291,54 @@ footer {
 }
 
 /* ========================================
-  Responsive Design
+  DELIVERY PAGE SPECIFIC STYLES
+  ======================================== */
+/* General Styling for Images to be Responsive */
+img {
+    max-width: 100%; /* Ensures images scale down */
+    height: auto;    /* Maintains aspect ratio */
+}
+
+/* Styles for the main content area for delivery page */
+.delivery-content {
+    display: flex;
+    flex-direction: column; /* Default to column for mobile */
+    align-items: center; /* Center items horizontally on mobile */
+    width: 100%; /* Take full width within main's padding */
+    max-width: 1200px; /* Limit overall content width */
+    margin: 0 auto; /* Center the content within main */
+}
+
+.frogo-image {
+    width: 100%;
+    max-width: 600px; /* Limit max width for desktop */
+    margin-bottom: 20px; /* Space below the image */
+}
+
+.delivery-description {
+    margin-bottom: 20px; /* Space below description on mobile */
+    text-align: center; /* Center text on mobile */
+}
+
+.map-container {
+    display: flex;
+    flex-direction: column; /* Stack maps on mobile */
+    gap: 15px; /* Space between maps */
+    width: 100%; /* Take full width on mobile */
+    align-items: center; /* Center maps on mobile */
+}
+
+.map-container iframe {
+    width: 100%; /* Make maps responsive */
+    max-width: 400px; /* Adjust as needed for map size */
+    height: 300px; /* Adjust as needed */
+    border: none; /* Remove default iframe border */
+    border-radius: 0.5rem; /* Add border-radius to maps */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Add subtle shadow to maps */
+}
+
+/* ========================================
+  Responsive Design - Main Breakpoint
   ======================================== */
 @media (min-width: 768px) { /* md breakpoint */
     .nav-links {
@@ -325,7 +372,6 @@ footer {
         padding-left: 1rem;
         margin: 1.5rem 0;
     }
-
 
     /* Styles for Services & Projects pages */
     .full-width-main {
@@ -473,7 +519,8 @@ footer {
         width: 100%;
         height: 200px; /* Adjust height as needed */
         background-color: rgba(255, 255, 255, 0.05);
-        /* Remove display: flex, align-items, justify-content for image centering */
+        /* Removed display: flex, align-items, justify-content for image centering,
+           as object-fit: cover will handle it with width/height 100% */
         font-size: 1.2rem;
         color: rgba(255, 255, 255, 0.5);
         overflow: hidden; /* Ensure image stays within bounds */
@@ -494,54 +541,56 @@ footer {
         margin: 0.25rem 0;
     }
 
-    /* Styles for Delivery Page */
-    .delivery-layout {
-        flex-direction: row; /* Side-by-side on desktop */
+    /* DESKTOP LAYOUT FOR DELIVERY PAGE */
+    .delivery-content {
+        display: grid;
+        grid-template-areas:
+            "frogo frogo"
+            "maps description"; /* Define layout for desktop */
+        grid-template-columns: 2fr 1fr; /* Adjust column widths (maps left, description right) */
+        gap: 30px; /* Space between grid items */
+    }
+
+    .frogo-image {
+        grid-area: frogo;
+        width: 100%; /* Take full width of its grid area */
+        max-width: 100%; /* Allow it to scale up to its container */
+        margin-bottom: 0; /* Remove bottom margin here */
+    }
+
+    .delivery-description {
+        grid-area: description;
+        text-align: left; /* Align text left on desktop */
+        margin-bottom: 0; /* Remove bottom margin here */
+    }
+
+    .map-container {
+        grid-area: maps;
+        flex-direction: row; /* Display maps in a row on desktop */
+        justify-content: space-around; /* Distribute maps evenly */
+        flex-wrap: wrap; /* Allow maps to wrap if too many */
+    }
+
+    .map-container iframe {
+        width: calc(33% - 20px); /* Roughly 3 maps per row with spacing */
+        max-width: none; /* Allow maps to scale within their column */
     }
 } /* End of @media (min-width: 768px) */
 
 
 /*=======================================
-Google Maps
+Google Maps (General styles, moved specific delivery map styles into .delivery-content)
 ========================================*/
 
-.map-container {
-    display: flex;
-    flex-wrap: wrap; /* Allows maps to wrap to the next line on smaller screens */
-    gap: 1rem; /* Gap between maps */
-    justify-content: center; /* Center the maps */
-    margin-bottom: 1.5rem; /* Space below the map container */
-}
+/* Removed .map-container and .delivery-map from here,
+   as specific delivery page map styling is now within .delivery-content */
 
-.delivery-map {
-    height: 300px; /* Adjust height as needed */
-    flex: 1; /* Allows maps to grow and shrink */
-    min-width: 280px; /* Minimum width for maps before wrapping */
-    border-radius: 0.5rem; /* Match the border-radius of the parent */
-    overflow: hidden; /* Ensure map content stays within rounded corners */
-}
-
-/* Adjust delivery-photo-large to accommodate the map-container */
-.delivery-photo-large {
-    width: 100%; /* Ensure it takes full width */
-    background-color: transparent; /* Remove placeholder background */
-    border-radius: 0.5rem; /* Apply consistent border-radius */
-    display: flex; /* Use flexbox for direct child alignment if needed */
-    justify-content: center; /* Center map container */
-    align-items: center;
-    /* min-height can be removed if maps define height, or adjusted */
-    min-height: auto; /* Allow height to be determined by content */
-}
-
-/* Adjustments for responsive design for maps */
+/* Adjustments for responsive design for maps
+   This media query for max-width is effectively superseded by the .delivery-content
+   mobile styles, but kept here for general map usage if needed elsewhere. */
 @media (max-width: 767px) { /* Adjust for smaller screens (mobile) */
-    .delivery-map {
-        width: 100%; /* Full width on small screens */
-    }
-    .map-container {
-        flex-direction: column; /* Stack maps vertically on small screens */
-        align-items: center; /* Center them when stacked */
-    }
+    /* .delivery-map rules were moved into the .map-container iframe within .delivery-content */
+    /* .map-container rules were moved into the .delivery-content map-container */
 }
 
 /*=======================================

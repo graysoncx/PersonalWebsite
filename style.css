@@ -386,7 +386,7 @@ img {
     .delivery-layout {
         display: grid;
         grid-template-areas:
-            "frogo-desc maps-area";
+            "maps-area frogo-desc";
         grid-template-columns: 1fr 2fr; /* frogo-desc takes 1 part, maps-area takes 2 parts */
         gap: 30px;
         align-items: start;

@@ -601,7 +601,7 @@ img {
         flex-direction: column; /* Stack maps vertically within this column */
         justify-content: flex-start;
         align-items: center; /* Center maps horizontally within their column */
-        gap: 20px;
+        gap: 10px;
         margin-bottom: 0;
     }
 

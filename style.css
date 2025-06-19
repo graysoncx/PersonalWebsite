@@ -581,7 +581,7 @@ img {
         display: grid; /* Use grid for desktop */
         grid-template-areas:
             "maps-area frogo-desc"; /* Maps on the left, description on the right */
-        grid-template-columns: 2fr 1fr; /* Adjust column widths as desired */
+        grid-template-columns: 1fr 2fr; /* Adjust column widths as desired */
         gap: 30px;
         align-items: start;
     }

@@ -349,7 +349,7 @@ img {
     margin-bottom: 1rem;
 }
 
-/* Existing Map Styles - Adjusting for responsiveness and iframe use */
+/* Existing Map Styles - Now for DIVs where JS renders maps */
 .map-container {
     display: flex;
     flex-direction: column; /* Stack maps vertically on mobile */
@@ -358,24 +358,18 @@ img {
     align-items: center; /* Center maps horizontally on mobile */
 }
 
-.delivery-map { /* Will be replaced by iframes directly */
-    /* Remove these properties as they were for placeholder divs, not iframes */
-    /* height: 300px;
-    flex: 1;
-    min-width: 280px; */
-    border-radius: 0.5rem;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-.map-container iframe {
-    width: 100%; /* Make iframes responsive to their container */
+.delivery-map { /* Target these DIVs directly now */
+    width: 100%; /* Make maps responsive to their container */
     max-width: 400px; /* Limit individual map width on mobile */
     height: 300px; /* Fixed height for maps */
-    border: none; /* Remove default iframe border */
+    border: none; /* No border for the div itself, map API will draw */
     border-radius: 0.5rem;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    /* Background for loading, or if map fails to load */
+    background-color: rgba(255, 255, 255, 0.05);
+    display: block; /* Ensure it's a block element */
 }
+
 
 /* ========================================
   Responsive Design - Main Breakpoint

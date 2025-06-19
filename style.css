@@ -310,13 +310,16 @@ img {
     margin: 2rem auto;
 }
 
-.delivery-layout {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+/* DESKTOP LAYOUT FOR DELIVERY PAGE */
+  .delivery-layout {
+    display: grid;
+    /* Maps area first (left), then frogo-desc area (right) `*/
+    grid-template-areas:"maps-area frogo-desc"; /* CHANGE 1: Maps to the left */
+    /* Adjusted column widths: maps column (left) gets 2 parts, description column (right) gets 1 part */
+    grid-template-columns: 2fr 1fr; /* Consider adjusting this ratio as needed, e.g., 1.5fr 1fr or 1fr 1fr */
+    gap: 30px;
+    align-items: start; /* Align content to the top of their grid cells */
 }
-
 .frogo-image-and-description {
     display: flex;
     flex-direction: column;

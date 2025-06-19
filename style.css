@@ -312,6 +312,7 @@ footer {
 img {
     max-width: 200%; /* Ensures images scale down */
     height: auto;    /* Maintains aspect ratio */
+    width: 200 %;
 }
 
 /* Styles for the main content area for delivery page */

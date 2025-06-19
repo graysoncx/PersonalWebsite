@@ -360,12 +360,13 @@ img {
 
 /* Existing Map Styles - Now for DIVs where JS renders maps */
 .map-container {
-    display: flex;
-    flex-direction: column; /* Stack maps vertically on mobile */
-    gap: 15px; /* Space between maps */
-    width: 100%; /* Maps take full width on mobile */
-    align-items: center; /* Center maps horizontally on mobile */
-}
+        grid-area: maps-area; /* Now placed in the maps-area (left column) */
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 0;
+    }
 
 .delivery-map { /* Target these DIVs directly now */
     width: 100%; /* Make maps responsive to their container */

@@ -342,7 +342,7 @@ img {
 }
 
 .delivery-photo-small {
-    width: 300%;
+    width: 100%;
     text-align: center;
 }
 
@@ -358,7 +358,7 @@ img {
 
 .delivery-img-placeholder.small img {
     width: 100%;
-    height: auto;
+    height: 50%;
     display: block;
 }
 

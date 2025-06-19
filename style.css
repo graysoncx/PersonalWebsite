@@ -586,7 +586,7 @@ img {
            top-right for maps */
         grid-template-areas:
             "frogo-desc maps-area";
-        grid-template-columns: 2fr 1fr; /* Frogo/description takes 2 parts, maps takes 1 part */
+        grid-template-columns: 1fr 1fr; /* Frogo/description takes 2 parts, maps takes 1 part */
         gap: 30px; /* Space between grid areas */
         align-items: start; /* Align content to the top of their grid cells */
     }

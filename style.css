@@ -319,6 +319,14 @@ img {
     gap: 20px; /* Space between description and maps */
 }
 
+.frogo-image-and-description {
+    display: flex; /* Use flexbox to stack image and text */
+    flex-direction: column;
+    align-items: center; /* Center them horizontally */
+    gap: 20px; /* Space between frogo and its description */
+    width: 100%; /* Take full width within delivery-layout */
+}
+
 .delivery-photo-small { /* This will now contain frogo.png */
     width: 100%; /* Takes full width on mobile */
     text-align: center; /* Ensures image inside is centered */

@@ -387,7 +387,7 @@ img {
         display: grid;
         grid-template-areas:
             "maps-area frogo-desc";
-        grid-template-columns: 1fr 1fr; /* frogo-desc takes 1 part, maps-area takes 2 parts */
+        grid-template-columns: 2fr 1fr; /* frogo-desc takes 1 part, maps-area takes 2 parts */
         gap: 30px;
         align-items: start;
     }

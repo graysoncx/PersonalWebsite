@@ -217,11 +217,11 @@ main {
     gap: 1.5rem;
 }
 
-.profile-img-container {
+.profile--container {
     flex-shrink: 0;
 }
 
-.profile-img {
+.profile- {
     width: 150px;
     height: 150px;
   /*========================
@@ -309,7 +309,7 @@ footer {
   DELIVERY PAGE SPECIFIC STYLES
   ======================================== */
 /* General Styling for Images to be Responsive */
-img {
+ img {
     max-width: 100 %; /* Ensures images scale down */
     height: auto;    /* Maintains aspect ratio */
     width: auto;

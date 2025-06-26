@@ -310,9 +310,9 @@ footer {
   ======================================== */
 /* General Styling for Images to be Responsive */
 img {
-    max-width: 200%; /* Ensures images scale down */
+    max-width: 100 %; /* Ensures images scale down */
     height: auto;    /* Maintains aspect ratio */
-    width: 200 %;
+    width: auto;
 }
 
 /* Styles for the main content area for delivery page */

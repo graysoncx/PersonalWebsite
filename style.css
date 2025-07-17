@@ -310,6 +310,7 @@ footer {
   ======================================== */
 /* General Styling for Images to be Responsive */
  img {
+    border-radius: 50 %;
     max-width: 100 %; /* Ensures images scale down */
     height: auto;    /* Maintains aspect ratio */
     width: auto;

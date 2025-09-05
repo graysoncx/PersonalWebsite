@@ -6,7 +6,6 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
 }
 
 body {
@@ -16,6 +15,7 @@ body {
     display: flex;
     flex-direction: column;
     line-height: 1.6;
+    min-height: 100vh;
 }
 
 .container {
@@ -823,3 +823,4 @@ Google Maps (General styles - these are now mostly superseded by .map-container 
     background-color: #FFD700;
     color: #331A40;
 }
+

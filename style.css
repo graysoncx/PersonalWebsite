@@ -314,6 +314,9 @@ footer {
     height: auto;    /* Maintains aspect ratio */
     width: auto;
 }
+.img-rounded {
+    border-radius: 50%; /* Adjust this value for more or less rounding */
+}
 
 /* Styles for the main content area for delivery page */
 .delivery-section-content {
@@ -822,5 +825,6 @@ Google Maps (General styles - these are now mostly superseded by .map-container 
     background-color: #FFD700;
     color: #331A40;
 }
+
 
 

@@ -314,8 +314,8 @@ footer {
     border-radius: 50%; /* Adjust this value for more or less rounding */
 }
 #fryport {
-    height: 50%;
     width: 50%;
+    height:auto;
 }
 
 /* Styles for the main content area for delivery page */
@@ -825,6 +825,7 @@ Google Maps (General styles - these are now mostly superseded by .map-container 
     background-color: #FFD700;
     color: #331A40;
 }
+
 
 
 

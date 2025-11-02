@@ -825,6 +825,10 @@ Google Maps (General styles - these are now mostly superseded by .map-container 
     background-color: #FFD700;
     color: #331A40;
 }
+.portfolio-item:first-child img {
+  object-fit: contain;
+}
+
 
 
 

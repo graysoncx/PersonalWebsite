@@ -825,6 +825,14 @@ Google Maps (General styles - these are now mostly superseded by .map-container 
     background-color: #FFD700;
     color: #331A40;
 }
+/* ========================================
+            PORTFOLIO IMAGE FIX 🍟
+  ======================================== */
+/* Target the image inside the image placeholder of the first project element */
+.project-element:first-child .project-img-placeholder img {
+  object-fit: contain; /* Prevents cropping, scales down to fit the entire image */
+}
+
 
 
 

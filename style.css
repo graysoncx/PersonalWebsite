@@ -88,4 +88,748 @@ body {
 .dropdown-button:hover {
     color: #FFD700;
 }
-.dropdown-
+.dropdown-button svg {
+    margin-left: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #331A40;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-item {
+    color: #E0BBE4;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #5F256B;
+}
+
+/* Mobile Menu */
+#mobile-menu-button {
+    display: block; /* Visible on mobile by default */
+    background: none;
+    border: none;
+    color: #E0BBE4;
+    cursor: pointer;
+}
+
+#mobile-menu {
+    padding-top: 1rem;
+    background-color: #331A40;
+    border-top: 1px solid #5F256B;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  /*==========================================
+     Initially hidden, will be shown by JS 
+  ============================================*/
+    display: none; 
+   /*=========================================
+        Ensure it's above other content 
+  ===========================================*/
+    z-index: 100;
+}
+
+#mobile-menu.show {
+    display: block;
+}
+
+#mobile-menu a,
+#mobile-menu .dropdown-button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem 1.5rem;
+    color: #E0BBE4;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#mobile-menu a:hover,
+#mobile-menu .dropdown-button:hover {
+    background-color: #5F256B;
+    color: #FFD700;
+}
+
+/*=====================================
+     Optional: Style for dropdown
+      menus within mobile menu 
+     if you implement them fully
+======================================*/
+#mobile-menu .dropdown-menu {
+    position: static;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: none;
+    border-radius: 0;
+    padding-left: 1rem;
+}
+
+#mobile-menu .dropdown-menu .dropdown-item {
+    padding-left: 2rem;
+}
+/* ========================================
+            MAIN CONTENT  D&M
+  ======================================== */
+main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.content-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 896px; /* max-w-4xl */
+}
+
+/*=======================
+   Homepage Specific 
+======================*/
+.home-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.profile--container {
+    flex-shrink: 0;
+}
+
+.profile- {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 4px solid #FFD700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.welcome-text h1 {
+    font-size: 3rem; 
+    font-weight: 800; /* font-extrabold */
+    margin-bottom: 1rem;
+    color: #FFD700;
+}
+
+.welcome-text p {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 300; /* font-light */
+    margin: 0;
+}
+.welcome-text .subtitle {
+    margin-top: 1rem;
+    font-size: 1rem; /* text-md */
+}
+
+/*===================================
+       Contact Page Specific 
+===================================*/
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.contact-card h2 {
+    font-size: 2.25rem; /* text-4xl */
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #FFD700;
+}
+
+.contact-card .intro-text {
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 300; /* font-light */
+    margin-bottom: 1.5rem;
+}
+
+.contact-info {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+.contact-info p {
+    margin: 0.5rem 0;
+}
+.contact-info i {
+    margin-right: 0.5rem;
+}
+
+.social-links a {
+    color: #FFD700;
+    font-size: 1.8rem;
+    margin: 0 0.75rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+.social-links a:hover {
+    color: #e6c200;
+    transform: translateY(-3px);
+}
+
+
+/* ========================================
+                   FOOTER
+  ======================================== */
+footer {
+    padding: 1rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ========================================
+  DELIVERY PAGE SPECIFIC STYLES
+  ======================================== */
+/* General Styling for Images to be Responsive */
+ img {
+    max-width: 100%; /* Ensures images scale down */
+    height: auto;    /* Maintains aspect ratio */
+    width: auto;
+}
+.img-rounded {
+    border-radius: 50%; /* Adjust this value for more or less rounding */
+}
+#fryport {
+    width: 30%;
+    height:auto;
+}
+
+/* Styles for the main content area for delivery page */
+.delivery-section-content {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 1100px;
+    margin: 2rem auto;
+}
+
+/* Mobile Layout (Default - flexbox column) */
+.delivery-layout {
+    display: flex; /* Use flexbox for mobile */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    gap: 20px; /* Space between description and maps */
+}
+
+.frogo-image-and-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.delivery-photo-small {
+    width: 100%;
+    text-align: center;
+}
+
+.delivery-img-placeholder.small {
+    display: inline-block;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.delivery-img-placeholder.small img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.delivery-text {
+    text-align: center; /* Center text on mobile */
+    width: 100%;
+}
+.delivery-text h3 {
+    color: #FFD700;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.map-container {
+  /*=================================
+  Ensure maps stack vertically on mobile 
+  ===================================*/
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 0;
+  /*=====================================
+  Maps take full width of delivery-layout on mobile 
+  ========================================*/
+    width: 100%; 
+}
+
+.delivery-map {
+    width: 100%; /* Make maps responsive to their container on mobile */
+    max-width: 400px; /* Limit individual map width on mobile */
+    height: 300px; /* Fixed height for maps on mobile */
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    background-color: rgba(255, 255, 255, 0.05);
+    display: block;
+}
+
+
+/* ========================================
+  Responsive Design - Main Breakpoint (Desktop)
+  ======================================== */
+@media (min-width: 768px) { /* md breakpoint */
+    .nav-links {
+        display: flex; /* Show desktop menu */
+        gap: 1rem;
+    }
+
+    #mobile-menu-button {
+      /*============================
+      Hide mobile menu button on desktop 
+      ==============================*/
+        display: none; 
+    }
+
+    #mobile-menu {
+      /*=====================================
+      Ensure mobile menu is hidden on desktop
+      =======================================*/
+        display: none; 
+    }
+
+  /*=========================================
+    General content alignment for text pages 
+  ============================================*/
+    .text-content {
+        text-align: left;
+        margin-top: 1.5rem;
+    }
+    .text-content p {
+        margin-bottom: 1rem;
+    }
+
+    .mission-quote {
+        font-size: 1.5rem;
+        font-style: italic;
+        font-weight: 600;
+        color: #FFD700;
+        border-left: 4px solid #FFD700;
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+    }
+
+    /*===============================================
+      Styles for Services & Projects pages 
+    -===============================================*/
+    main {
+        align-items: flex-start; /* Align content to the top for most pages */
+    }
+
+    .full-width-card {
+        max-width: 100%;
+    }
+
+    .service-element {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 0.75rem;
+        margin-bottom: 2rem;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+/* Adjustments for Store Page Images on Mobile */
+.store-img-placeholder {
+    /* On mobile, ensure the placeholder doesn't exceed screen width */
+    max-width: 100%;
+    height: auto; /* Allow height to adjust based on content */
+    margin-left: auto; /* Center the placeholder */
+    margin-right: auto;
+}
+
+/* Make sure the image inside also behaves */
+.store-img-placeholder img {
+    display: block; /* Ensure no extra space */
+    width: 100%; /* Explicitly set to 100% of its parent placeholder */
+    height: auto; /* Ensure aspect ratio is maintained */
+    object-fit: cover; /* Keeps image covering the area, might crop */
+}
+
+    .service-description {
+        padding: 1.5rem;
+        text-align: left;
+    }
+
+    .service-description h3 {
+        margin-top: 0;
+        font-size: 1.75rem;
+        color: #FFD700;
+    }
+
+    .service-rate {
+        position: absolute;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        background-color: #FFD700;
+        color: #331A40;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+
+    /*===========================
+         Project elements 
+      =====================*/
+    .project-element {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 0.75rem;
+        margin-bottom: 2rem;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .project-img-placeholder {
+        width: 100%;
+        height: 300px;
+        background-color: rgba(255, 255, 255, 0.05);
+        border-bottom: 2px solid #5F256B;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .project-img-placeholder img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .project-description {
+        padding: 1.5rem;
+        text-align: left;
+    }
+
+    .project-description h3 {
+        margin-top: 0;
+        font-size: 1.75rem;
+        color: #FFD700;
+    }
+
+    .project-link {
+        margin-top: 1rem;
+        text-align: right;
+    }
+
+    .project-link a {
+        color: #FFD700;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+        border: 1px solid #FFD700;
+        border-radius: 0.375rem;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .project-link a:hover {
+        background-color: #FFD700;
+        color: #331A40;
+    }
+
+    /*==============================
+         Styles for Store Page 
+    ===============================*/
+    .store-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+    }
+
+    .store-item-link {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .store-item {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 0.75rem;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .store-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    .store-img-placeholder {
+        width: 100%;
+        height: 200px;
+        background-color: rgba(255, 255, 255, 0.05);
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.5);
+        overflow: hidden;
+    }
+
+    .store-img-placeholder img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .store-item-info {
+        padding: 1rem;
+        text-align: left;
+    }
+    .store-item-info p {
+        margin: 0.25rem 0;
+    }
+
+    /*==================================================
+      DESKTOP LAYOUT FOR DELIVERY PAGE 
+  ================================================*/
+    .delivery-layout {
+        display: grid; /* Use grid for desktop */
+        grid-template-areas:
+            "maps-area frogo-desc"; /* Maps on the left, description on the right */
+        grid-template-columns: 1fr 2fr; /* Adjust column widths as desired */
+        gap: 30px;
+        align-items: start;
+    }
+
+    .frogo-image-and-description {
+        grid-area: frogo-desc; /* Assign to the right column */
+        flex-direction: column; /* Still stack image and text within this column */
+        align-items: center; /* Center horizontally within its column */
+    }
+
+    .delivery-text {
+        text-align: left; /* Align text left on desktop */
+    }
+
+    .map-container {
+        grid-area: maps-area; /* Assign to the left column */
+        flex-direction: column; /* Stack maps vertically within this column */
+        justify-content: flex-start;
+        align-items: center; /* Center maps horizontally within their column */
+        gap: 10px;
+        margin-bottom: 0;
+    }
+
+    .delivery-map {
+        width: 300px; /* Fixed width for square maps on desktop */
+        height: 300px; /* Fixed height (same as width) for square maps */
+        max-width: 100%; /* Ensures maps scale down if column is narrower */
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        background-color: rgba(255, 255, 255, 0.05);
+        display: block;
+    }
+   /*=========================================
+      "]" = End of @media (min-width: 768px) 
+    =========================================*/
+}
+
+
+/*=======================================
+Google Maps (General styles - these are now mostly superseded by .map-container iframe rules)
+========================================*/
+
+/*=======================================
+                  Blog
+========================================*/
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #FFD700;
+    margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+}
+
+.blog-post {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    text-align: left;
+}
+
+.blog-post-header {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+    padding-bottom: 1rem;
+}
+
+.blog-post-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    color: #FFD700;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.blog-post-meta {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+}
+
+.blog-post-body h4 {
+    color: #FFD700;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.blog-post-body ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 1rem;
+}
+
+.blog-post-body li {
+    margin-bottom: 0.5rem;
+}
+
+.blog-post-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin: 1.5rem 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: #e6c200;
+    text-decoration: underline;
+}
+
+/*===============================================
+  Responsive adjustments for blog posts 
+================================================*/
+@media (max-width: 767px) {
+    .blog-post-title {
+        font-size: 1.5rem;
+    }
+    .page-title {
+        font-size: 2rem;
+    }
+}
+
+/*===================================================
+          Project-specific styles 
+===================================================*/
+.project-element {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0.75rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.project-img-placeholder {
+    width: 100%;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-bottom: 2px solid #5F256B;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.project-description {
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.project-description h3 {
+    margin-top: 0;
+    font-size: 1.75rem;
+    color: #FFD700;
+}
+
+.project-link {
+    margin-top: 1rem;
+    text-align: right;
+}
+
+.project-link a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: 1px solid #FFD700;
+    border-radius: 0.375rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-link a:hover {
+    background-color: #FFD700;
+    color: #331A40;
+}
+
+/* ========================================
+            PORTFOLIO IMAGE FIX 🍟
+  ======================================== */
+/* Target the image inside the image placeholder of the first project element */
+.project-element:first-child .project-img-placeholder img {
+  object-fit: contain; /* Prevents cropping, scales down to fit the entire image */
+}
